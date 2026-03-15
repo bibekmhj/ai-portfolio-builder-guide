@@ -1,0 +1,124 @@
+# Customization Prompts for Your Portfolio
+# Use these after generating your first version with the master prompt.
+# Copy and paste any of these into Claude to customize your site.
+
+=============================================================
+COLORS & DESIGN
+=============================================================
+
+Change the color scheme to navy blue and white with gold accents
+
+Change the color scheme to dark mode — black background, white text, green accents
+
+Make the design minimal and clean, inspired by Apple's website style
+
+Make the design bold and creative with a dark background and vibrant accent colors
+
+Use a warm color palette — cream, brown, and terracotta tones
+
+=============================================================
+LAYOUT & SECTIONS
+=============================================================
+
+Add a Certifications section after the Skills section
+
+Add a Publications or Research section after Projects
+
+Add a Languages section to my Skills area
+
+Add a Volunteering section before the Contact section
+
+Move the Skills section above the Work Experience section
+
+Remove the Education section and replace it with an Achievements section
+
+=============================================================
+CONTENT IMPROVEMENTS
+=============================================================
+
+Write a compelling 3-sentence About/Hero section based on my resume that 
+highlights my unique value as a candidate
+
+Rewrite my Skills section to group skills into categories 
+(e.g., Programming Languages, Frameworks, Tools, Soft Skills)
+
+Rewrite my Work Experience bullet points to be more impactful and 
+results-oriented using the STAR format (Situation, Task, Action, Result)
+
+Add a "Download Resume" button in the hero section that links to resume.pdf
+
+=============================================================
+VISUAL ENHANCEMENTS
+=============================================================
+
+Add subtle fade-in animations when sections scroll into view
+
+Add a circular profile photo placeholder in the hero section with 
+instructions on how to replace it with my real photo
+
+Add hover effects to the project cards so they lift slightly on hover
+
+Add a progress bar style to my skills section showing proficiency levels
+
+Add a timeline layout to my Work Experience section
+
+=============================================================
+INTERACTIVITY
+=============================================================
+
+Add a working contact form using Netlify Forms 
+(no backend needed — Netlify handles it for free)
+
+Add a "Back to Top" button that appears when scrolling down
+
+Add smooth scroll behavior to all navigation links
+
+Add a mobile hamburger menu for the navigation on small screens
+
+=============================================================
+FIELD-SPECIFIC CUSTOMIZATION
+=============================================================
+
+--- For Business / Finance Students ---
+Redesign this portfolio for a Business student. Replace the Projects section 
+with a Case Studies section. Add a section for internships and leadership 
+roles. Use a professional, corporate color scheme.
+
+--- For Psychology / Social Science Students ---
+Redesign this portfolio for a Psychology student. Add a Research section 
+highlighting studies I've participated in or led. Include a section for 
+academic publications or papers. Use a calm, trustworthy color palette.
+
+--- For Design Students ---
+Redesign this portfolio for a Design student. Make the layout itself feel 
+like a design portfolio — visual, creative, and gallery-focused. Add a 
+large Projects/Work section with image placeholders. Minimize text and 
+let visuals do the talking.
+
+--- For Pre-Med / Biology Students ---
+Redesign this portfolio for a Pre-Med student. Add sections for Research 
+Experience, Clinical Experience, and Volunteer Work. Use clean, clinical 
+white and blue tones. Include a section for relevant coursework.
+
+--- For Education / Teaching Students ---
+Redesign this portfolio for an Education student. Add a Teaching Philosophy 
+section. Include a Classroom Experience section. Use warm, approachable 
+colors. Add a section for extracurricular activities and mentoring.
+
+--- For Marketing / Communications Students ---
+Redesign this portfolio for a Marketing student. Add a Campaigns section 
+showcasing projects. Include social media and analytics skills prominently. 
+Use vibrant, energetic colors that feel brand-savvy.
+
+=============================================================
+FINISHING TOUCHES
+=============================================================
+
+Add a favicon to the website using a simple emoji that represents my field
+
+Add Open Graph meta tags so the site looks great when shared on LinkedIn 
+and social media (use my name and a brief description)
+
+Add a footer with copyright text, my name, and links to LinkedIn and GitHub
+
+Minify and optimize the HTML file so it loads as fast as possible

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Alex Johnson — Computer Science Student Portfolio">
+<title>Alex Johnson | CS Student</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --dark: #0f172a;
+    --gray: #64748b;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --border: #e2e8f0;
+  }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--dark); line-height: 1.6; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+  .nav-name { font-weight: 700; font-size: 1.1rem; color: var(--dark); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--gray); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--primary); text-decoration: none; }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 2rem 4rem; background: linear-gradient(135deg, #eff6ff 0%, #ffffff 60%); }
+  .hero-content { max-width: 700px; margin: 0 auto; }
+  .hero-tag { display: inline-block; background: #dbeafe; color: var(--primary); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+  .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem; }
+  .hero h1 span { color: var(--primary); }
+  .hero p { font-size: 1.15rem; color: var(--gray); margin-bottom: 2rem; max-width: 540px; }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; cursor: pointer; border: none; }
+  .btn-primary { background: var(--primary); color: white; }
+  .btn-primary:hover { background: var(--primary-dark); text-decoration: none; color: white; }
+  .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+  .btn-outline:hover { background: var(--primary); color: white; text-decoration: none; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .section-line { width: 50px; height: 4px; background: var(--primary); border-radius: 2px; margin-bottom: 2.5rem; }
+  .section-alt { background: var(--light); }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .skill-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .skill-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray); margin-bottom: 0.75rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag { background: #eff6ff; color: var(--primary); padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 500; }
+
+  /* EXPERIENCE */
+  .timeline { display: flex; flex-direction: column; gap: 2rem; }
+  .timeline-item { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; }
+  .timeline-date { font-size: 0.85rem; color: var(--gray); font-weight: 500; padding-top: 0.2rem; }
+  .timeline-content h3 { font-size: 1.1rem; font-weight: 700; }
+  .timeline-content h4 { color: var(--primary); font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .timeline-content ul { padding-left: 1.2rem; color: var(--gray); font-size: 0.95rem; }
+  .timeline-content li { margin-bottom: 0.3rem; }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .project-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+  .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.75rem 0; }
+  .project-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .project-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.5; }
+  .project-links { margin-top: 1rem; display: flex; gap: 1rem; }
+  .project-links a { font-size: 0.85rem; font-weight: 600; }
+
+  /* EDUCATION */
+  .edu-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
+  .edu-card h3 { font-size: 1.1rem; font-weight: 700; }
+  .edu-card h4 { color: var(--primary); margin-bottom: 0.25rem; }
+  .edu-card p { color: var(--gray); font-size: 0.9rem; }
+  .edu-date { color: var(--gray); font-size: 0.9rem; white-space: nowrap; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .contact-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; transition: transform 0.2s; }
+  .contact-card:hover { transform: translateY(-3px); }
+  .contact-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  .contact-card h4 { font-size: 0.85rem; color: var(--gray); margin-bottom: 0.25rem; }
+  .contact-card a { font-weight: 600; font-size: 0.95rem; }
+
+  /* FOOTER */
+  footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 2rem; font-size: 0.9rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-date { padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Alex Johnson</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-content">
+    <span class="hero-tag">👋 Open to Opportunities</span>
+    <h1>Hi, I'm <span>Alex Johnson</span></h1>
+    <p>Computer Science student at State University passionate about building scalable web applications and solving real-world problems with clean, efficient code.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section-alt" id="skills">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>Languages</h4>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Java</span>
+          <span class="tag">SQL</span>
+          <span class="tag">C++</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Frameworks</h4>
+        <div class="skill-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Spring Boot</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Tools & Cloud</h4>
+        <div class="skill-tags">
+          <span class="tag">AWS</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Git</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Linux</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>Soft Skills</h4>
+        <div class="skill-tags">
+          <span class="tag">Team Leadership</span>
+          <span class="tag">Agile</span>
+          <span class="tag">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Summer 2024</div>
+        <div class="timeline-content">
+          <h3>Software Engineering Intern</h3>
+          <h4>Tech Company Inc. — New York, NY</h4>
+          <ul>
+            <li>Built a REST API serving 50,000+ daily requests using Node.js and PostgreSQL</li>
+            <li>Reduced page load time by 40% through code optimization and caching</li>
+            <li>Collaborated with a team of 8 engineers in daily Agile standups</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2023 – Present</div>
+        <div class="timeline-content">
+          <h3>Undergraduate Teaching Assistant</h3>
+          <h4>State University — Data Structures & Algorithms</h4>
+          <ul>
+            <li>Lead weekly lab sessions for 30 students covering algorithms and complexity</li>
+            <li>Hold 4 office hours per week, improving average exam scores by 15%</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section-alt" id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Smart Study Scheduler</h3>
+        <div class="project-tech">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">React</span>
+        </div>
+        <p>AI-powered study planner that analyzes past performance and generates personalized study schedules. Used by 200+ students at my university.</p>
+        <div class="project-links">
+          <a href="#">GitHub →</a>
+          <a href="#">Live Demo →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Campus Food Finder</h3>
+        <div class="project-tech">
+          <span class="tag">React Native</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span>
+        </div>
+        <p>Mobile app that shows real-time dining hall menus, wait times, and nutritional info. 500+ downloads on the App Store in the first month.</p>
+        <div class="project-links">
+          <a href="#">GitHub →</a>
+          <a href="#">App Store →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <h3>Stock Price Predictor</h3>
+        <div class="project-tech">
+          <span class="tag">Python</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">Pandas</span>
+        </div>
+        <p>LSTM neural network model that predicts stock price trends with 78% directional accuracy on historical S&P 500 data.</p>
+        <div class="project-links">
+          <a href="#">GitHub →</a>
+          <a href="#">Report →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+    <div class="edu-card">
+      <div>
+        <h4>State University</h4>
+        <h3>B.S. Computer Science</h3>
+        <p>GPA: 3.8 / 4.0 &nbsp;·&nbsp; Dean's List 2022, 2023, 2024</p>
+        <p style="margin-top:0.4rem; color:#64748b; font-size:0.9rem;">Relevant Coursework: Data Structures, Algorithms, Machine Learning, Database Systems, Operating Systems, Software Engineering</p>
+      </div>
+      <div class="edu-date">Aug 2021 – May 2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-alt" id="contact">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="section-line"></div>
+    <p style="color:#64748b; margin-bottom:2rem;">I'm currently looking for internship and full-time opportunities. Feel free to reach out!</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <h4>Email</h4>
+        <a href="mailto:alex@example.com">alex@example.com</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">💼</div>
+        <h4>LinkedIn</h4>
+        <a href="#">linkedin.com/in/alexjohnson</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🐙</div>
+        <h4>GitHub</h4>
+        <a href="#">github.com/alexjohnson</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Alex Johnson · Built with Claude AI + Netlify · <a href="#" style="color:#60a5fa">Back to top ↑</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>

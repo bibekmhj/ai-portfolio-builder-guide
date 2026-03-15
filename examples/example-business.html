@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jordan Smith — Business & Finance Student Portfolio">
+<title>Jordan Smith | Business Student</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #1e3a5f;
+    --gold: #c9a84c;
+    --dark: #0d1b2a;
+    --gray: #6b7280;
+    --light: #f9fafb;
+    --border: #e5e7eb;
+  }
+  body { font-family: 'Georgia', 'Times New Roman', serif; color: var(--dark); line-height: 1.7; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { color: var(--gold); }
+
+  nav { position: fixed; top: 0; width: 100%; background: var(--primary); z-index: 100; padding: 1rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .nav-name { color: white; font-weight: bold; font-size: 1.1rem; letter-spacing: 0.05em; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.8); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'Segoe UI', sans-serif; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  .hero { min-height: 100vh; background: var(--primary); display: flex; align-items: center; padding: 8rem 2.5rem 5rem; }
+  .hero-inner { max-width: 750px; margin: 0 auto; }
+  .hero-label { color: var(--gold); font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+  .hero h1 { font-size: clamp(2.8rem, 5vw, 4.2rem); color: white; line-height: 1.15; margin-bottom: 1.2rem; }
+  .hero h1 span { color: var(--gold); }
+  .hero p { color: rgba(255,255,255,0.75); font-size: 1.1rem; max-width: 560px; margin-bottom: 2.5rem; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { padding: 0.8rem 2rem; font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.05em; border-radius: 4px; transition: all 0.2s; cursor: pointer; border: none; }
+  .btn-gold { background: var(--gold); color: var(--dark); }
+  .btn-gold:hover { background: #b8972d; color: var(--dark); }
+  .btn-outline { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.4); }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  section { padding: 5rem 2.5rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .section-label { font-family: 'Segoe UI', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold); margin-bottom: 0.5rem; }
+  .section-title { font-size: 2rem; font-weight: bold; margin-bottom: 2.5rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.75rem; display: inline-block; }
+  .section-alt { background: var(--light); }
+
+  .competencies-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+  .comp-card { border-left: 3px solid var(--gold); padding: 1rem 1.25rem; background: white; border-radius: 0 8px 8px 0; }
+  .comp-card h4 { font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .comp-card p { font-size: 0.85rem; color: var(--gray); font-family: 'Segoe UI', sans-serif; }
+
+  .exp-list { display: flex; flex-direction: column; gap: 2rem; }
+  .exp-item { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; }
+  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+  .exp-header h3 { font-size: 1.1rem; }
+  .exp-header .exp-date { font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; color: var(--gray); background: var(--light); padding: 0.2rem 0.6rem; border-radius: 4px; }
+  .exp-company { color: var(--gold); font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem; }
+  .exp-item ul { padding-left: 1.2rem; font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; color: var(--gray); }
+  .exp-item li { margin-bottom: 0.3rem; }
+
+  .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .case-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.75rem; transition: box-shadow 0.2s; }
+  .case-card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+  .case-tag { display: inline-block; background: #fef3c7; color: #92400e; font-family: 'Segoe UI', sans-serif; font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.75rem; }
+  .case-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .case-card p { font-family: 'Segoe UI', sans-serif; font-size: 0.88rem; color: var(--gray); line-height: 1.5; }
+  .case-result { margin-top: 0.75rem; font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--primary); }
+
+  .edu-block { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .edu-block h3 { font-size: 1.2rem; margin-bottom: 0.25rem; }
+  .edu-block h4 { color: var(--gold); font-family: 'Segoe UI', sans-serif; margin-bottom: 0.5rem; }
+  .edu-block p { font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; color: var(--gray); }
+  .edu-year { font-family: 'Segoe UI', sans-serif; font-size: 0.9rem; color: var(--gray); }
+
+  .contact-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .contact-item { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; text-align: center; }
+  .contact-item h4 { font-family: 'Segoe UI', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gray); margin-bottom: 0.4rem; }
+  .contact-item a { font-family: 'Segoe UI', sans-serif; font-weight: 600; font-size: 0.9rem; }
+
+  footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 2rem; font-family: 'Segoe UI', sans-serif; font-size: 0.85rem; }
+  footer a { color: var(--gold); }
+
+  @media (max-width: 640px) { .nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">JORDAN SMITH</span>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Finance & Business Student</div>
+    <h1>Jordan <span>Smith</span></h1>
+    <p>Aspiring finance professional with experience in financial modeling, market analysis, and business strategy. Seeking opportunities in investment banking or corporate finance.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-gold">View Case Studies</a>
+      <a href="#contact" class="btn btn-outline">Connect</a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-label">What I Bring</div>
+    <div class="section-title">Core Competencies</div>
+    <div class="competencies-grid">
+      <div class="comp-card"><h4>Financial Modeling</h4><p>DCF, LBO, M&A models in Excel</p></div>
+      <div class="comp-card"><h4>Data Analysis</h4><p>Excel, Python, Tableau, SQL</p></div>
+      <div class="comp-card"><h4>Market Research</h4><p>Equity analysis, industry reports</p></div>
+      <div class="comp-card"><h4>Presentations</h4><p>PowerPoint, investor decks, pitches</p></div>
+      <div class="comp-card"><h4>Leadership</h4><p>Team management, project coordination</p></div>
+      <div class="comp-card"><h4>Communication</h4><p>Written reports, stakeholder updates</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="experience">
+  <div class="container">
+    <div class="section-label">Where I've Worked</div>
+    <div class="section-title">Experience</div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-header">
+          <h3>Finance Intern</h3>
+          <span class="exp-date">Summer 2024</span>
+        </div>
+        <div class="exp-company">Regional Investment Firm — Chicago, IL</div>
+        <ul>
+          <li>Built DCF and comparable company analysis models for 3 mid-market M&A transactions totaling $180M</li>
+          <li>Prepared weekly market research reports distributed to 12 senior analysts</li>
+          <li>Assisted in due diligence process for 2 acquisitions, reviewing 300+ pages of financial documents</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <h3>President, Investment Club</h3>
+          <span class="exp-date">2023 – Present</span>
+        </div>
+        <div class="exp-company">State University</div>
+        <ul>
+          <li>Lead a team of 25 analysts managing a $50,000 simulated equity portfolio</li>
+          <li>Grew club membership by 60% through recruiting events and workshops</li>
+          <li>Organized 8 speaker events with industry professionals from Goldman Sachs, JP Morgan, and BlackRock</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Selected Work</div>
+    <div class="section-title">Case Studies & Projects</div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <span class="case-tag">M&A Analysis</span>
+        <h3>Tech Sector Acquisition Model</h3>
+        <p>Built a full LBO model analyzing a hypothetical $500M acquisition of a SaaS company. Presented to faculty and industry panel.</p>
+        <div class="case-result">→ Won 1st place, University Finance Competition</div>
+      </div>
+      <div class="case-card">
+        <span class="case-tag">Equity Research</span>
+        <h3>Retail Industry Deep Dive</h3>
+        <p>Authored a 15-page equity research report on a publicly traded retailer including financial projections and a Buy/Hold/Sell recommendation.</p>
+        <div class="case-result">→ Published in university finance journal</div>
+      </div>
+      <div class="case-card">
+        <span class="case-tag">Strategy</span>
+        <h3>Market Entry Analysis</h3>
+        <p>Consulting-style analysis for a local business considering expansion into two new markets. Delivered revenue projections and risk assessment.</p>
+        <div class="case-result">→ Client implemented recommendations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="education">
+  <div class="container">
+    <div class="section-label">Academic Background</div>
+    <div class="section-title">Education</div>
+    <div class="edu-block">
+      <div>
+        <h4>State University</h4>
+        <h3>B.S. Finance, Minor in Economics</h3>
+        <p>GPA: 3.7 / 4.0 &nbsp;·&nbsp; Magna Cum Laude Track</p>
+        <p style="margin-top:0.4rem">Relevant: Corporate Finance, Financial Modeling, Investment Analysis, Econometrics, Business Strategy</p>
+      </div>
+      <div class="edu-year">Aug 2021 – May 2025</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Let's Talk</div>
+    <div class="section-title">Contact</div>
+    <p style="color:#6b7280; font-family:'Segoe UI',sans-serif; margin-bottom:2rem;">Open to full-time roles in investment banking, corporate finance, and financial consulting.</p>
+    <div class="contact-row">
+      <div class="contact-item"><h4>Email</h4><a href="mailto:jordan@example.com">jordan@example.com</a></div>
+      <div class="contact-item"><h4>LinkedIn</h4><a href="#">linkedin.com/in/jordansmith</a></div>
+      <div class="contact-item"><h4>Location</h4><a href="#">Chicago, IL (open to relocation)</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Jordan Smith &nbsp;·&nbsp; Built with Claude AI + Netlify &nbsp;·&nbsp; <a href="#">Back to top ↑</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>

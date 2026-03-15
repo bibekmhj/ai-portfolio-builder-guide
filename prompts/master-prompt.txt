@@ -1,0 +1,14 @@
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file.
+
+Requirements:
+- Modern, clean design with a professional color scheme
+- Fully mobile-responsive (works on phones and laptops)
+- Sections: Hero/About, Skills, Work Experience, Projects, Education, Contact
+- Smooth scrolling navigation
+- My name prominently displayed
+- A contact section with my email and LinkedIn
+- Professional typography and spacing
+- All CSS included in the same file (no external dependencies)
+
+Please generate the complete HTML file ready to deploy.

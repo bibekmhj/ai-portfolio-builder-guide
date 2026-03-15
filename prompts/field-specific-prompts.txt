@@ -1,0 +1,143 @@
+# Field-Specific Portfolio Prompts
+# These prompts are designed for students outside of Computer Science.
+# Upload your resume first, then use the prompt for your field.
+
+=============================================================
+BUSINESS / FINANCE / ECONOMICS
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for a Business student.
+
+Requirements:
+- Professional, corporate design in navy blue and white
+- Sections: About, Core Competencies, Work & Internship Experience, 
+  Case Studies / Projects, Leadership & Activities, Education, Contact
+- Highlight analytical, leadership, and communication skills
+- Clean typography — this should feel like a Fortune 500 professional's site
+- Mobile-responsive, all CSS included
+
+=============================================================
+PSYCHOLOGY / SOCIAL SCIENCES
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for a Psychology student.
+
+Requirements:
+- Calm, trustworthy design in soft blue and white tones
+- Sections: About, Research Experience, Clinical / Volunteer Experience, 
+  Skills, Academic Projects & Papers, Education, Contact
+- Emphasize research methods, empathy, and analytical thinking
+- Include a brief Research Interests section
+- Mobile-responsive, all CSS included
+
+=============================================================
+DESIGN / UX / VISUAL ARTS
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for a Design student.
+
+Requirements:
+- Creative, visually striking layout that itself demonstrates design sense
+- Sections: About, Work/Projects (gallery-style with image placeholders), 
+  Skills & Tools, Experience, Education, Contact
+- Large visual placeholders for portfolio pieces
+- Minimal text — let the visuals speak
+- Dark or light mode option, bold typography
+- Mobile-responsive, all CSS included
+
+=============================================================
+NURSING / PRE-MED / HEALTH SCIENCES
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for a Healthcare / Pre-Med student.
+
+Requirements:
+- Clean, clinical design in white and blue
+- Sections: About, Clinical Experience, Research Experience, 
+  Volunteer & Community Service, Skills, Relevant Coursework, Education, Contact
+- Professional and compassionate tone throughout
+- Emphasize patient care, teamwork, and scientific skills
+- Mobile-responsive, all CSS included
+
+=============================================================
+EDUCATION / TEACHING
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for an Education student.
+
+Requirements:
+- Warm, approachable design in green and cream tones
+- Sections: About, Teaching Philosophy (2-3 sentences), 
+  Classroom & Teaching Experience, Mentoring & Tutoring, 
+  Skills, Education, Contact
+- Friendly and professional tone
+- Highlight classroom management, curriculum design, communication
+- Mobile-responsive, all CSS included
+
+=============================================================
+MARKETING / COMMUNICATIONS / PR
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for a Marketing student.
+
+Requirements:
+- Vibrant, brand-savvy design with bold colors and modern typography
+- Sections: About, Campaign & Project Highlights, Skills 
+  (include social media, analytics, content creation), 
+  Experience, Education, Contact
+- Each project should have a title, brief description, and result/outcome
+- Energetic and creative feel — this person understands branding
+- Mobile-responsive, all CSS included
+
+=============================================================
+ENGINEERING (NON-CS: Mechanical, Civil, Electrical, Chemical)
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for an Engineering student.
+
+Requirements:
+- Technical, precise design in dark gray and orange/blue accents
+- Sections: About, Technical Skills & Tools, Engineering Projects 
+  (with descriptions of problem, approach, and outcome), 
+  Work & Internship Experience, Education, Contact
+- Highlight problem-solving, CAD tools, lab skills, and technical software
+- Professional and results-oriented tone
+- Mobile-responsive, all CSS included
+
+=============================================================
+LIBERAL ARTS / HUMANITIES / ENGLISH / HISTORY
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for a Humanities student.
+
+Requirements:
+- Elegant, sophisticated design in warm neutrals or classic black and white
+- Sections: About, Writing Samples / Published Work, Research & Projects, 
+  Skills (research, writing, editing, languages), Experience, Education, Contact
+- Showcase strong communication, critical thinking, and research abilities
+- Intellectual yet approachable tone
+- Mobile-responsive, all CSS included
+
+=============================================================
+DATA SCIENCE / STATISTICS (Non-CS path)
+=============================================================
+
+I've attached my resume. Please build me a complete, professional 
+portfolio website as a single HTML file for a Data Science student.
+
+Requirements:
+- Modern, analytical design — clean whites with purple or teal accents
+- Sections: About, Technical Skills (languages, tools, libraries), 
+  Data Projects (each with dataset, methods, findings), 
+  Experience, Education, Contact
+- Include GitHub and Kaggle profile links prominently
+- Results-driven descriptions for each project
+- Mobile-responsive, all CSS included
